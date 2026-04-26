@@ -64,7 +64,7 @@ nav {
 .nav-links a {
     text-decoration: none;
     color: white;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 0.85rem;
     transition: opacity 0.3s;
 }
@@ -79,17 +79,24 @@ nav {
     text-align: center;
     padding: 150px 20px 100px; /* Adjusted padding for desktop */
     width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
+    will-change: transform;
+}
+
+.container-card.card-skinny {
+    will-change: transform;
 }
 
 .main-title {
     font-family: 'Satisfy', cursive;
-    font-size: 4.5rem;
+    font-size: 5rem;
     color: white;
     margin-bottom: 5px;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
@@ -132,7 +139,60 @@ nav {
     transition: 0.3s;
 }
 
-.btn-yellow { background-color: #faffb5; color: #333; }
+.btn-yellow {
+    background-color: #faffb5;
+    color: #333;
+}
+
+.btn-yellow:hover {
+    box-shadow: 0 0 24px rgba(255, 255, 180, 0.35);
+}
+
+.magic-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.magic-sparkle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 250, 220, 0.95);
+    filter: blur(1px);
+    box-shadow: 0 0 22px rgba(255, 240, 200, 0.75);
+    animation-name: sparkle-float;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes sparkle-float {
+    0% {
+        transform: translateY(0) scale(0.9);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateY(-24px) scale(1.05);
+        opacity: 0.65;
+    }
+    100% {
+        transform: translateY(-48px) scale(0.95);
+        opacity: 0;
+    }
+}
+
+.main-nav,
+.hero,
+.content-section,
+footer {
+    position: relative;
+    z-index: 1;
+}
 
 /* --- CONTENT SECTIONS --- */
 .content-section {
