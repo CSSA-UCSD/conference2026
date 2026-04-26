@@ -5,17 +5,23 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+    touch-action: pan-y;
+}
+
 body {
     background-color: #eed7cd;
     background-image: url('assets/background.png');
     background-repeat: no-repeat;
-    background-position: center top; /* Default position for desktop */
+    background-position: center -20px; /* Move lanterns up slightly */
     background-size: cover; /* Ensures the image fully covers the viewport */
     background-attachment: scroll;
     font-family: 'Merriweather Sans', sans-serif;
     color: #4a2c2a;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    max-width: 100vw;
 }
 
 /* --- TRANSPARENT NAVBAR WITH WHITE TEXT --- */
@@ -72,6 +78,13 @@ nav {
     align-items: center;
     text-align: center;
     padding: 150px 20px 100px; /* Adjusted padding for desktop */
+    width: 100%;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .main-title {
@@ -97,7 +110,9 @@ nav {
     background: rgba(255, 255, 255, 0.95);
     padding: 40px;
     border-radius: 15px;
+    width: 100%;
     max-width: 550px;
+    margin: 0 auto;
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
 
@@ -124,13 +139,13 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 20px;
+    padding: 40px 20px;
 }
 
 .section-title {
     font-family: 'Satisfy', cursive;
     font-size: 3.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: white;
 }
 
@@ -138,6 +153,7 @@ nav {
     background: #fffdf7;
     width: 100%;
     max-width: 600px;
+    margin: 0 auto;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -151,10 +167,10 @@ nav {
     font-size: 1.8rem;
 }
 
-.card-content { padding: 40px; line-height: 1.6; }
+.card-content { padding: 25px; line-height: 1.6; }
 
 /* --- SPEAKERS (CENTERED ON MOBILE) --- */
-.speaker-list { padding: 40px 20px; display: flex; flex-direction: column; gap: 20px; }
+.speaker-list { padding: 20px 20px; display: flex; flex-direction: column; gap: 16px; }
 .speaker-item { display: flex; align-items: center; width: 100%; }
 .speaker-item:nth-child(even) { flex-direction: row-reverse; }
 
@@ -183,7 +199,7 @@ nav {
 .speaker-bubble p { font-size: 0.75rem; }
 
 /* --- SCHEDULE (NO AGENDA COLUMN) --- */
-.schedule-mobile-wrapper { width: 100%; overflow-x: auto; padding: 20px; }
+.schedule-mobile-wrapper { width: 100%; overflow-x: auto; padding: 10px; }
 .schedule-table { min-width: 450px; width: 100%; border-collapse: separate; border-spacing: 4px; }
 .schedule-table th, .schedule-table td { padding: 12px; font-size: 0.85rem; border-radius: 4px; text-align: center; }
 
@@ -213,7 +229,7 @@ nav {
         background-color: #eed7cd;
         background-image: url('assets/background.png');
         background-repeat: no-repeat;
-        background-position: center -10%; /* Adjust background for mobile */
+        background-position: center -20px; /* Move lanterns up slightly on mobile */
         background-size: cover; /* Ensures the image fully covers the viewport */
         background-attachment: scroll;
     }
@@ -244,5 +260,31 @@ nav {
         margin: -30px 0 0 0 !important;
         padding: 40px 15px 15px !important;
         border-radius: 20px;
+    }
+
+    .schedule-mobile-wrapper {
+        padding: 8px;
+    }
+    .schedule-table {
+        min-width: 0;
+        table-layout: fixed;
+    }
+    .schedule-table th,
+    .schedule-table td {
+        padding: 8px;
+        font-size: 0.8rem;
+        white-space: normal;
+        word-break: break-word;
+    }
+    .schedule-table .col-time,
+    .schedule-table .col-bear,
+    .schedule-table .col-green,
+    .schedule-table .time-cell,
+    .schedule-table .time-cell-end,
+    .schedule-table .grey-cell,
+    .schedule-table .white-cell,
+    .schedule-table .empty-cell,
+    .schedule-table .highlight-cell {
+        text-align: center;
     }
 }
