@@ -1,3 +1,10 @@
+/* --- UTILITY CLASSES FOR SCHEDULE AND SECTION TITLES --- */
+.schedule-black {
+    color: #222 !important;
+}
+.section-brown {
+    color: #7d4e43 !important;
+}
 /* --- RESET & BACKGROUND --- */
 * {
     margin: 0;
@@ -117,8 +124,8 @@ nav {
     background: rgba(255, 255, 255, 0.95);
     padding: 40px;
     border-radius: 15px;
-    width: 100%;
-    max-width: 550px;
+    width: 90%;
+    max-width: 650px;
     margin: 0 auto;
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
@@ -211,8 +218,8 @@ footer {
 
 .container-card.card-skinny {
     background: #fffdf7;
-    width: 100%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 700px;
     margin: 0 auto;
     border-radius: 20px;
     overflow: hidden;
@@ -258,20 +265,96 @@ footer {
 .speaker-bubble h4 { font-size: 1rem; margin-bottom: 2px; }
 .speaker-bubble p { font-size: 0.75rem; }
 
-/* --- SCHEDULE (NO AGENDA COLUMN) --- */
-.schedule-mobile-wrapper { width: 100%; overflow-x: auto; padding: 10px; }
-.schedule-table { min-width: 450px; width: 100%; border-collapse: separate; border-spacing: 4px; }
-.schedule-table th, .schedule-table td { padding: 12px; font-size: 0.85rem; border-radius: 4px; text-align: center; }
 
-.col-time { background-color: #7d4e43; color: white; }
-.col-bear { background-color: #c0c0c0; }
-.col-green { background-color: #fff; border: 1px solid #ddd; }
+/* --- FIGMA-STYLE SCHEDULE CARD --- */
+/* --- FIGMA-PERFECT SCHEDULE CARD --- */
+.schedule-card-figma {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    padding: 0 0 24px 0;
+    max-width: 370px;
+    margin: 0 auto;
+}
+.schedule-card-figma .card-header {
+    background: #7d4e43;
+    color: #fff;
+    border-radius: 20px 20px 0 0;
+    font-family: 'Satisfy', cursive;
+    font-size: 1.7rem;
+    padding: 22px 0 16px 0;
+    margin-bottom: 0;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+.schedule-vertical-list-figma {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 22px 10px 0 10px;
+}
+.schedule-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0;
+}
+.schedule-time {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #7d4e43;
+    margin-bottom: 0px;
+    letter-spacing: 0.1px;
+}
+.schedule-session {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 700;
+    color: #7d4e43;
+    font-size: 1.01rem;
+    margin-bottom: 2px;
+    margin-top: 0px;
+}
+.schedule-speaker {
+    font-size: 0.93rem;
+    color: #4a2c2a;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-top: 0;
+    line-height: 1.2;
+}
+.schedule-special-plain {
+    font-size: 1.01rem;
+    color: #7d4e43;
+    font-weight: 700;
+    margin-top: 2px;
+    margin-bottom: 0;
+    letter-spacing: 0.1px;
+}
 
-.time-cell, .time-cell-end { background-color: #e49e79; color: white; font-weight: 700; }
-.grey-cell { background-color: #f2f2f2; }
-.white-cell { background-color: #fff; border: 1px solid #f0f0f0; }
-.empty-cell { background-color: #f2f2f2; color: #aaa; }
-.highlight-cell { background-color: #fff2cc; font-weight: 700; color: #7d4e43; font-size: 1rem; }
+@media (max-width: 768px) {
+    .schedule-card-figma {
+        max-width: 98vw;
+        padding: 0 0 12px 0;
+    }
+    .schedule-vertical-list-figma {
+        padding: 10px 2vw 0 2vw;
+        gap: 7px;
+    }
+    .schedule-time {
+        font-size: 0.98rem;
+    }
+    .schedule-session {
+        font-size: 0.97rem;
+    }
+    .schedule-speaker {
+        font-size: 0.89rem;
+    }
+    .schedule-special-plain {
+        font-size: 0.97rem;
+    }
+}
 
 /* --- DESKTOP OPTIMIZATION --- */
 @media (min-width: 1024px) {

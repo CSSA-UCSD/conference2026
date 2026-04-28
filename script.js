@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
         sparkle.style.width = `${size}px`;
         sparkle.style.height = `${size}px`;
 
-        sparkle.style.animationDuration = `${2 + Math.random() * 1.5}s`;
-        sparkle.style.animationDelay = `${Math.random() * 2}s`;
-        sparkle.style.opacity = `${0.35 + Math.random() * 0.45}`;
+        sparkle.style.animationDuration = `${4 + Math.random() * 2.5}s`;
+        sparkle.style.animationDelay = `${Math.random() * 3}s`;
+        sparkle.style.opacity = `${0.25 + Math.random() * 0.35}`;
         sparkle.style.animationDirection = 'alternate';
 
         overlay.appendChild(sparkle);
